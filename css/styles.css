@@ -20,7 +20,25 @@ header h1{
 }
 
 #grid_container{
+    /*border: 1px solid white;*/
+    width: calc(60px * 16);
+    margin: 30px auto;
+}
+
+.my_grid{
+    background-color: tomato;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 1.8em;
     border: 1px solid white;
+    text-align: center;
+    list-style-type: none;
+    display: inline-block;
+}
+
+.grid_cursor{
+    background-color: red;
 }
 
 #button_run{
