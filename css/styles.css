@@ -4,14 +4,14 @@
 }
 
 body{
-    background-color: rgb(114, 203, 255);
+    background-color: white;
     color: white;
     text-shadow: 2px 2px 0 black;
 }
 
 header h1{
     background-color: rgb(255, 0, 0);
-    border: 5px solid white;
+    border: 3px solid black;
     width: 30%;
     margin: 30px auto;
     padding: 3px;
@@ -25,16 +25,37 @@ header h1{
     margin: 30px auto;
 }
 
+#my_numbers_container{
+    /*border: 1px solid red;*/
+    width: calc(60px * 10);
+    margin: 30px auto;
+}
+
+.my_numbers{
+    background-color: red;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 1.3em;
+    margin-left: 30px;
+    text-align: center;
+    list-style-type: none;
+    display: inline-block;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
 .my_grid{
     background-color: tomato;
     width: 60px;
     height: 60px;
     line-height: 60px;
     font-size: 1.8em;
-    border: 1px solid white;
+    border: 1px solid black;
     text-align: center;
     list-style-type: none;
     display: inline-block;
+    cursor: pointer;
 }
 
 .grid_cursor{
@@ -44,7 +65,7 @@ header h1{
 #button_run{
     background-color: red;
     margin: 30px auto;
-    border: 3px solid white;
+    border: 3px solid black;
     width: 140px;
     text-align: center;
     letter-spacing: 0.1em;
