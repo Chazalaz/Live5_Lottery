@@ -8,7 +8,7 @@ const button_run = document.querySelector("#button_run");
         button_run.addEventListener("click", () => {
             
             pick_numbers();
-            getMatchingBalls(my_numbers, generated_numbers);
+            //getMatchingBalls(my_numbers, generated_numbers);
 
         });
 
@@ -71,7 +71,10 @@ const pick_numbers = () => {
         if(!generated_numbers.includes(num)) generated_numbers.push(num)
     }
 
-    generated_numbers_container.append(generated_numbers);
+    //let generated_numbers_text = generated_numbers.toString(); 
+    let win_num = document.createTextNode(generated_numbers);
+    generated_numbers_container.appendChild(win_num);
+
     console.log("Winning Numbers : ", generated_numbers);
 
 }
