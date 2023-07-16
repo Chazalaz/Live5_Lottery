@@ -8,12 +8,13 @@ const button_run = document.querySelector("#button_run");
         button_run.addEventListener("click", () => {
             
             pick_numbers();
-            // setTimeout(() => {
-            //     alert("Reloading Page")
-            //     location.reload();
-            // }, 1000);
             getMatchingBalls(my_numbers, generated_numbers);
 
+        });
+
+const reset_page = document.querySelector("#reset_page");
+        reset_page.addEventListener("click", () => {
+            location.reload();
         });
 
 const create_the_grid = () => {
@@ -71,7 +72,7 @@ const pick_numbers = () => {
     }
 
     generated_numbers_container.append(generated_numbers);
-    console.log("my numbers : ", my_numbers);
+    console.log("Winning Numbers : ", generated_numbers);
 
 }
 
