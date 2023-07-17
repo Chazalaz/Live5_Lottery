@@ -1,19 +1,36 @@
 const N_NUMS = 6;
 const NUM_MAX = 59;
 const grid_container = document.querySelector("#grid_container");
-
+this.isReset = true;
 let my_numbers = [];
 
 const button_run = document.querySelector("#button_run");
         button_run.addEventListener("click", () => {
-            
-            pick_numbers();
-            //getMatchingBalls(my_numbers, generated_numbers);
 
+            if(this.isReset){
+                this.isReset = false;
+                pick_numbers();
+            }
+            //getMatchingBalls(my_numbers, generated_numbers);
+        });
+
+const button_lucky = document.querySelector("#lucky_dip");
+        button_lucky.addEventListener("click", () => {
+
+            for(var i = 0; i < N_NUMS; i++){
+                let num = Math.floor((Math.random() * NUM_MAX) + 1);
+
+                if(my_numbers.length < N_NUMS && !my_numbers.includes(num)){
+                    my_numbers.push(num)
+                    grid_container.childNodes[num - 1].classList.add("grid_cursor");
+                    create_my_numbers(num);
+                }  
+           }
         });
 
 const reset_page = document.querySelector("#reset_page");
         reset_page.addEventListener("click", () => {
+            this.isReset = true;
             location.reload();
         });
 
@@ -68,15 +85,17 @@ const pick_numbers = () => {
     generated_numbers = [];
     while(generated_numbers.length < N_NUMS){
         let num = Math.floor((Math.random() * NUM_MAX) + 1);
+        let div_num = document.createElement("div");
+            div_num.setAttribute("class", "my_numbers");
+            div_num.setAttribute("id", "my_numbers_" + num);
+
+        let text_num = document.createTextNode(num);
+
+        div_num.appendChild(text_num);
+        generated_numbers_container.appendChild(div_num);
         if(!generated_numbers.includes(num)) generated_numbers.push(num)
     }
-
-    //let generated_numbers_text = generated_numbers.toString(); 
-    let win_num = document.createTextNode(generated_numbers);
-    generated_numbers_container.appendChild(win_num);
-
     console.log("Winning Numbers : ", generated_numbers);
-
 }
 
 function getMatchingBalls(my_numbers, generated_numbers){
